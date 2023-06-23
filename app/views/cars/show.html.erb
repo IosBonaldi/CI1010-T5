@@ -70,6 +70,8 @@
                     <tr>
                         <th scope="col">Model</th>
                         <th scope="col">Brand</th>
+                        <th scope="col">Available engines</th>
+                        <th scope="col">Document</th>
                         <% if current_user.admin? %>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
@@ -79,7 +81,13 @@
                 <tbody>
                     <tr>
                         <td><%= @car.model %></td>
-                        <td><%= @car.brand.name %></td>
+                        <td><%= link_to @car.brand.name, brand_path(@car.brand) %></td>
+                        <td>
+                            <% @car.engines.each do |engine| %>
+                                <%= link_to engine.code, engine_path(engine) %><br />
+                            <% end %>
+                        </td>
+                        <td><% if @car.document %><%= link_to @car.document.code, document_path(@car.document) %><% end %></td>
                         <% if current_user.admin? %>
                             <td>
                                 <a href="<%=edit_car_path(@car)%>" class="btn btn-warning">

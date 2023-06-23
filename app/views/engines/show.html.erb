@@ -71,6 +71,7 @@
                         <th scope="col">Code</th>
                         <th scope="col">Displacement</th>
                         <th scope="col">Horsepower</th>
+                        <th scope="col">Cars using</th>
                         <% if current_user.admin? %>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
@@ -82,6 +83,11 @@
                         <td><%= @engine.code %></td>
                         <td><%= @engine.displacement %></td>
                         <td><%= @engine.horsepower %></td>
+                        <td>
+                            <% @engine.cars.each do |car| %>
+                                <%= link_to car.model, car_path(car) %><br />
+                            <% end %>
+                        </td>
                         <% if current_user.admin? %>
                             <td>
                                 <a href="<%=edit_engine_path(@engine)%>" class="btn btn-warning">

@@ -75,6 +75,18 @@
                 <%= form.collection_select :brand_id, Brand.all, :id, :name, {}, class: 'form-select' %>
             </div>
 
+            <div class="mb-3 text-start">
+                <div>
+                    <%= form.label :engine_ids, "Available engines :", class:'mb-3', style: "display: block" %>
+                    <% Engine.all.each do |engine| %>
+                    <div class="form-check">
+                        <%= form.check_box :engine_ids, { multiple: true, class:'form-check-input' }, engine.id, nil  %>
+                        <%= form.label :engine_ids, engine.code, class: 'form-check-label' %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+
             <div>
                 <%= form.submit "Create car", class: 'btn btn-primary' %>
             </div>

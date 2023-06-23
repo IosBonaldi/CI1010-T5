@@ -79,7 +79,7 @@
                 <tbody>
                     <tr>
                         <td><%= @document.code %></td>
-                        <td><%= @document.car.model %></td>
+                        <td><%= link_to @document.car.model, car_path(@document.car) %></td>
                         <% if current_user.admin? %>
                             <td>
                                 <a href="<%=edit_document_path(@document)%>" class="btn btn-warning">

@@ -70,6 +70,7 @@
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Country</th>
+                        <th scope="col">Models</th>
                         <% if current_user.admin? %>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
@@ -80,6 +81,11 @@
                     <tr>
                         <td><%= @brand.name %></td>
                         <td><%= @brand.country %></td>
+                        <td>
+                            <% @brand.cars.each do |car| %>
+                                <%=link_to car.model, car_path(car)%><br />
+                            <% end %>
+                        </td>
                         <% if current_user.admin? %>
                             <td>
                                 <a href="<%=edit_brand_path(@brand)%>" class="btn btn-warning">
