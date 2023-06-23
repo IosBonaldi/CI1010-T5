@@ -3,6 +3,8 @@ require "test_helper"
 class EnginesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @engine = engines(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

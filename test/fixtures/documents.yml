@@ -2,8 +2,20 @@
 
 one:
   car: one
-  code: MyString
+  code: ABC123
 
 two:
   car: two
-  code: MyString
+  code: DEF456
+
+three:
+  car: three
+  code: GHI789
+
+four:
+  car: four
+  code: JKL012
+
+five:
+  car: five
+  code: MNO345

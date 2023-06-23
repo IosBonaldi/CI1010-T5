@@ -2,8 +2,20 @@
 
 one:
   brand: one
-  model: MyString
+  model: Golf
 
 two:
   brand: two
-  model: MyString
+  model: Escort
+
+three:
+  brand: three
+  model: Corolla
+
+four:
+  brand: four
+  model: BR800
+
+five:
+  brand: five
+  model: Uno

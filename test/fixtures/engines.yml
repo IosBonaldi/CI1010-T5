@@ -1,11 +1,26 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  displacement: 9.99
-  horsepower: 1
+  code: TSI
+  displacement: 1.0
+  horsepower: 105
 
 two:
-  code: MyString
-  displacement: 9.99
-  horsepower: 1
+  code: Firefly
+  displacement: 1.0
+  horsepower: 75
+
+three:
+  code: Gamma
+  displacement: 1.6
+  horsepower: 130
+
+four:
+  code: TFSI
+  displacement: 2.0
+  horsepower: 230
+
+five:
+  code: Endura
+  displacement: 1.8
+  horsepower: 90
