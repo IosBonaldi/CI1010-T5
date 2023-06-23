@@ -79,6 +79,13 @@
                 <div>
                     <%= form.submit "Edit document", class: 'btn btn-warning' %>
                 </div>
+                <% if @document.errors.any? %>
+                    <div class="mt-3">
+                        <% @document.errors.full_messages.each do |message| %>
+                            <span class="text-danger"><%= message %></span><br />
+                        <% end %>
+                    </div>
+                <% end %>
             <% end %>
             <a class="mt-3" href="<%= document_path(@document) %>">Return to document</a>
         </div>

@@ -79,6 +79,13 @@
                 <div>
                     <%= form.submit "Edit brand", class: 'btn btn-warning' %>
                 </div>
+                <% if @brand.errors.any? %>
+                    <div class="mt-3">
+                        <% @brand.errors.full_messages.each do |message| %>
+                            <span class="text-danger"><%= message %></span><br />
+                        <% end %>
+                    </div>
+                <% end %>
             <% end %>
         <a class="mt-3" href="<%= brand_path(@brand) %>">Return to brand</a>
         </div>

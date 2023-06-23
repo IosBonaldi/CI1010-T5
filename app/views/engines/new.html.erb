@@ -84,6 +84,13 @@
                 <div>
                     <%= form.submit "Create engine", class: 'btn btn-primary' %>
                 </div>
+                <% if @engine.errors.any? %>
+                    <div class="mt-3">
+                        <% @engine.errors.full_messages.each do |message| %>
+                            <span class="text-danger"><%= message %></span><br />
+                        <% end %>
+                    </div>
+                <% end %>
             <% end %>
         </div>
 

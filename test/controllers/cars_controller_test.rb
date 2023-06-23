@@ -19,7 +19,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create car" do
     assert_difference("Car.count") do
-      post cars_url, params: { car: { brand_id: @car.brand_id, model: @car.model } }
+      post cars_url, params: { car: { brand_id: @car.brand_id, model: @car.model, engine_ids: [@car.engines.first.id] } }
     end
 
     assert_redirected_to car_url(Car.last)

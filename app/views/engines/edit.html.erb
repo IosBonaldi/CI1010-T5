@@ -84,6 +84,13 @@
                 <div>
                     <%= form.submit "Edit engine", class: 'btn btn-warning' %>
                 </div>
+                <% if @engine.errors.any? %>
+                    <div class="mt-3">
+                        <% @engine.errors.full_messages.each do |message| %>
+                            <span class="text-danger"><%= message %></span><br />
+                        <% end %>
+                    </div>
+                <% end %>
             <% end %>
             <a class="mt-3" href="<%= engine_path(@engine) %>">Return to engine</a>
         </div>

@@ -3,19 +3,24 @@
 one:
   brand: one
   model: Golf
+  engines: [one, two, three]
 
 two:
   brand: two
   model: Escort
+  engines: [one, two, three]
 
 three:
   brand: three
   model: Corolla
+  engines: [one, two, three]
 
 four:
   brand: four
   model: BR800
+  engines: [one, two, three]
 
 five:
   brand: five
   model: Uno
+  engines: [one, two, three]
