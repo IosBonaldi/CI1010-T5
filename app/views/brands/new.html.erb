@@ -64,6 +64,7 @@
         </nav>
         <div class="container d-flex flex-column flex-grow-1 align-items-center justify-content-center">
             <h1>New brand</h1>
+            <p id="brand-help" class="text-decoration-underline mb-1">Help<p>
             <%= form_with(model: @brand, html: { class: 'bg-dark rounded-4 text-white p-4 justify-content-center text-center' }) do |form| %>
             <div class="mb-3">
                 <%= form.label :name, class: 'form-label', style: "display: block" %>
@@ -80,5 +81,12 @@
             </div>
             <% end %>
         </div>
+
+        <script>
+            var helpBrandButton = document.getElementById('brand-help');
+            helpBrandButton.addEventListener('click', function() {
+            alert("Fill in the fields with the brand name and its country of origin.");
+            });
+        </script>
     </body>
 </html>

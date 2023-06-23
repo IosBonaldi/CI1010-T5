@@ -64,6 +64,7 @@
         </nav>
         <div class="container d-flex flex-column flex-grow-1 align-items-center justify-content-center">
             <h1>New document</h1>
+            <p id="document-help" class="text-decoration-underline mb-1">Help<p>
             <%= form_with(model: @document, html: { class: 'bg-dark rounded-4 text-white p-4 justify-content-center text-center' }) do |form| %>
             <div class="mb-3">
                 <%= form.label :code, class: 'form-label', style: "display: block" %>
@@ -71,7 +72,7 @@
             </div>
 
             <div class="mb-3">
-                <%= form.label :car_id, class: 'form-label', style: "display: block" %>
+                <%= form.label :car_id, "Car", class: 'form-label', style: "display: block" %>
                 <%= form.collection_select :car_id, Car.left_outer_joins(:document).where(documents: { id: nil }), :id, :model, {}, class: 'form-select' %>
             </div>
 
@@ -80,5 +81,12 @@
             </div>
             <% end %>
         </div>
+
+        <script>
+            var helpDocumentButton = document.getElementById('document-help');
+                helpDocumentButton.addEventListener('click', function() {
+                alert("Fill in the fields with an eight-character code and the car to which the document belongs (if there is no option, there is no car without documents in the database).");
+            });
+        </script>
     </body>
 </html>

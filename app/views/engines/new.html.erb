@@ -64,6 +64,7 @@
         </nav>
         <div class="container d-flex flex-column flex-grow-1 align-items-center justify-content-center">
             <h1>New engine</h1>
+            <p id="engine-help" class="text-decoration-underline mb-1">Help<p>
             <%= form_with(model: @engine, html: { class: 'bg-dark rounded-4 text-white p-4 justify-content-center text-center' }) do |form| %>
                 <div class="mb-3">
                     <%= form.label :code, class: 'form-label', style: "display: block" %>
@@ -85,5 +86,12 @@
                 </div>
             <% end %>
         </div>
+
+        <script>
+            var helpEngineButton = document.getElementById('engine-help');
+                helpEngineButton.addEventListener('click', function() {
+                alert("Fill in the fields with the engine code/name, its liter/displacement, and its power in horsepower.");
+            });
+        </script>
     </body>
 </html>

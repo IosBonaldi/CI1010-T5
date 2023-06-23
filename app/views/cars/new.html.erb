@@ -64,6 +64,7 @@
         </nav>
         <div class="container d-flex flex-column flex-grow-1 align-items-center justify-content-center">
             <h1>New car</h1>
+            <p id="car-help" class="text-decoration-underline mb-1">Help<p>
             <%= form_with(model: @car, html: { class: 'bg-dark rounded-4 text-white p-4 justify-content-center text-center' }) do |form| %>
             <div class="mb-3">
                 <%= form.label :model, class: 'form-label', style: "display: block" %>
@@ -92,5 +93,12 @@
             </div>
             <% end %>
         </div>
+
+        <script>
+            var helpCarButton = document.getElementById('car-help');
+            helpCarButton.addEventListener('click', function() {
+            alert("Fill in the fields with the car model, the brand to which it belongs and the engines available in its range (if there is no option for brands or engines, it is because none have been created in the database yet).");
+            });
+        </script>
     </body>
 </html>
